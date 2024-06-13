@@ -9,19 +9,18 @@
 
     <ScrollView
         android:id="@+id/scrollview"
-        android:layout_width="446dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#87EDFA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ExtraText"
-        app:layout_constraintVertical_bias="0.092">
+        app:layout_constraintTop_toTopOf="@id/main"
+        app:layout_constraintVertical_bias="0.092"
+        tools:ignore="ExtraText">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
@@ -30,34 +29,36 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:paddingStart="150dp"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:text="title: "></TextView>
 
                 <EditText
-                android:id="@+id/titletext"
-                android:layout_width="300dp"
-                android:layout_height="75dp"
-                android:hint="vacation"></EditText>
-        </LinearLayout>
+                    android:id="@+id/titletext"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="vacation"
+                    tools:ignore="TouchTargetSizeCheck"></EditText>
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:paddingStart="150dp"
+                    android:padding="10dp"
                     android:text="price: "></TextView>
 
                 <EditText
                     android:id="@+id/pricetext"
                     android:layout_width="300dp"
-                    android:layout_height="75dp"
-                    android:hint="price"></EditText>
+                    android:layout_height="wrap_content"
+                    android:hint="price"
+                    tools:ignore="TouchTargetSizeCheck"></EditText>
             </LinearLayout>
 
         </LinearLayout>
@@ -78,10 +79,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/excursionrecyclerview"
-        android:layout_width="394dp"
-        android:layout_height="626dp"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -70,12 +70,13 @@ public class VacationDetails extends AppCompatActivity {
         final ExcursionAdapter excursionAdapter = new ExcursionAdapter(this);
         recyclerView.setAdapter(excursionAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        List<Excursion> filteredExcursion = new ArrayList<>();
-        for(Excursion e : repository.getmAllExcursions()) {
-            if(e.getVacationID() == vacationID) filteredExcursion.add(e);
-        }
-        excursionAdapter.setExcursion(filteredExcursion);
-
+//        List<Excursion> filteredExcursion = new ArrayList<>();
+//        for(Excursion e : repository.getmAllExcursions()) {
+//            if(e.getVacationID() == vacationID) filteredExcursion.add(e);
+//        }
+//        excursionAdapter.setExcursion(filteredExcursion);
+        List<Excursion> filteredExcursions = repository.getAssociatedExcursion(vacationID);
+        excursionAdapter.setExcursion(filteredExcursions);
 
 
 
@@ -109,8 +110,9 @@ public class VacationDetails extends AppCompatActivity {
             else {
                 vacations = new Vacations(vacationID, editName.getText().toString(), Double.parseDouble(editPrice.getText().toString()));
                 repository.update(vacations);
-                this.finish();
+
             }
+            this.finish();
             return true;
         }
 
