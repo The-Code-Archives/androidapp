@@ -44,6 +44,7 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mAllExcursions=mexcursionDAO.getAllExcursion();
             Log.d("Repository", "All Vacations: " + mAllExcursions.toString());
+
         });
         try {
             Thread.sleep(1000);
@@ -69,11 +70,11 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mvacationDAO.delete(vacations);
         });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void update(Vacations vacations) {
@@ -124,11 +125,11 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mexcursionDAO.delete(excursion);
         });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
 }
